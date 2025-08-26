@@ -9,6 +9,7 @@ I wanted something to redirect myself to when visiting a few unpleasant time-sin
 - JSON API endpoint for programmatic access
 - Easy to run locally or with Docker
 
+
 ## Quick Start (Docker)
 
 1. **Build and run the app:**
@@ -21,6 +22,24 @@ I wanted something to redirect myself to when visiting a few unpleasant time-sin
    ```sh
    docker-compose down
    ```
+
+## Deploy to Google Cloud Run (Minimal Resources)
+
+1. **Authenticate with Google Cloud:**
+   ```sh
+   gcloud auth login
+   gcloud config set project <YOUR_PROJECT_ID>
+   ```
+
+2. **Deploy using the provided script:**
+   ```sh
+   ./deploy.sh <YOUR_PROJECT_ID> [REGION]
+   ```
+   - The script sets minimal resources: 256MiB RAM, 1 CPU, concurrency 1, max 1 instance.
+   - The service will be public (remove `--allow-unauthenticated` in `deploy.sh` if you want to restrict access).
+
+3. **Get your Cloud Run URL:**
+   The script will print a message at the end. You can also find the URL in the Google Cloud Console under Cloud Run > Services.
 
 ## Endpoints
 - `/` — Main page, random quote rendered in HTML
