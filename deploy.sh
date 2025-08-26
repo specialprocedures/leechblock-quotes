@@ -10,7 +10,7 @@ if [ -z "$1" ]; then
 fi
 
 PROJECT_ID="$1"
-REGION="${2:-europe-west2-a}"
+REGION="${2:-europe-west2}"
 SERVICE_NAME="leechblock-quotes"
 IMAGE="gcr.io/$PROJECT_ID/$SERVICE_NAME"
 
@@ -27,6 +27,7 @@ gcloud run deploy "$SERVICE_NAME" \
   --cpu 1 \
   --concurrency 1 \
   --max-instances 1 \
+  --allow-unauthenticated \
   --port 5000
 
 echo "\nDeployed! Visit the Cloud Run service in the GCP Console to get your URL."
