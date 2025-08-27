@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -8,66 +8,49 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #000000 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    color: #333;
 }
 
 .quote-container {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    text-align: left;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.quote-container::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: rotate(45deg);
-    pointer-events: none;
-}
-
 .quote-text {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 400;
-    line-height: 1.4;
-    color: #333;
-    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
     font-style: italic;
     position: relative;
     z-index: 1;
-    max-height: 320px;
     overflow-y: auto;
-    width: 100%;
-    padding-right: 8px;
+    max-height: 300px;
+    padding-right: 10px;
     word-break: break-word;
 }
-
 
 .quote-author {
     font-size: 1rem;
     font-weight: 700;
-    color: #555;
-    border-top: 2px solid #667eea;
-    padding-top: 20px;
+    color: #777;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
     position: relative;
     z-index: 1;
 }
@@ -80,23 +63,23 @@ body {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    background: #667eea;
-    color: white;
+    background: #f0f0f0;
+    color: #555;
     border: none;
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     z-index: 2;
 }
 
 .refresh-btn:hover {
-    background: #5a67d8;
+    background: #e0e0e0;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .refresh-btn:active {
@@ -105,17 +88,15 @@ body {
 
 @media (max-width: 600px) {
     .quote-container {
-        width: 95vw;
-        height: 95vw;
-        max-width: 500px;
-        max-height: 500px;
+        width: 90%;
+        padding: 15px;
     }
 
     .quote-text {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
     .quote-author {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
