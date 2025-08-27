@@ -23,7 +23,7 @@ I wanted something to redirect myself to when visiting a few unpleasant time-sin
    docker-compose down
    ```
 
-## Deploy to Google Cloud Run (Minimal Resources)
+## Deploy to Google Cloud Run (Recommended)
 
 1. **Authenticate with Google Cloud:**
    ```sh
@@ -37,6 +37,7 @@ I wanted something to redirect myself to when visiting a few unpleasant time-sin
    ```
    - The script sets minimal resources: 256MiB RAM, 1 CPU, concurrency 1, max 1 instance.
    - The service will be public (remove `--allow-unauthenticated` in `deploy.sh` if you want to restrict access).
+   - Default region: `europe-west2` (can be overridden by specifying `[REGION]`).
 
 3. **Get your Cloud Run URL:**
    The script will print a message at the end. You can also find the URL in the Google Cloud Console under Cloud Run > Services.
